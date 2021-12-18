@@ -1,0 +1,10 @@
+{
+    "basic_test_card": {
+        "email": "test@email.com",
+        "number": "4242424242424242",
+        "date": "1230",
+        "cvv": "111",
+        "zip":"1234"
+    }
+}
+  

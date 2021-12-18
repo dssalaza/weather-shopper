@@ -20,4 +20,5 @@ export class ProductsPage{
     addProductToCartByPrice(price){
       return cy.get('.text-center.col-4').filter(`:contains("${price}")`).children().contains('Add');
     }
+
 }

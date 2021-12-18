@@ -2,5 +2,6 @@
 {
     "env": {
         "prod_url": "https://weathershopper.pythonanywhere.com/"
-      }
+    },
+    "chromeWebSecurity": false
 }
