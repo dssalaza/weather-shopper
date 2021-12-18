@@ -28,20 +28,25 @@ export class CheckoutPage{
         return this.getIframeBody().find('button[id="submitButton"]');
     }
 
-    evaluateNumberOfItemsInTheCard(quantity: number){
-        return cy.get('table[class="table table-striped"]>tbody>tr').should('have.length', quantity);
+    evaluateNumberOfItemsInTheCart(quantity: number){
+        return cy
+                 .get('table[class="table table-striped"]>tbody>tr')
+                 .should('have.length', quantity);
     }
 
     getIframeDocument = () => {
         return cy
-        .get('iframe[class="stripe_checkout_app"]') 
-        .its('0.contentDocument').should('exist')
+                 .get('iframe[class="stripe_checkout_app"]') 
+                 .its('0.contentDocument')
+                 .should('exist')
       }
       
     getIframeBody = () => {
-        return this.getIframeDocument()
-        .its('body').should('not.be.undefined')
-        .then(cy.wrap)
+        return this
+                   .getIframeDocument()
+                   .its('body')
+                   .should('not.be.undefined')
+                   .then(cy.wrap)
       }
 
 }

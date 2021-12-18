@@ -2,7 +2,8 @@ export class HomePage{
 
     getCurrentTemperature() {
         return cy.get('div[id="weather"]').then(($temperatureString) => {
-            return cy.wrap(Number($temperatureString.text().match(/\d+/)[0]));
+            return cy
+                     .wrap(Number($temperatureString.text().match(/\d+/)[0]));
         })
     }
 
