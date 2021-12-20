@@ -27,7 +27,7 @@ describe('Weather shopper purchase', () => {
             homePage.getBuyProductByName(productName).click();
         });       
         
-        cy.validateUrlContains('/moisturizer');
+        cy.url().should('contain', '/moisturizer')
 
         productsPage.getLowerPriceByIngredient('Aloe').then(lowerPrice => {
             productsPage.addProductToCartByPrice(lowerPrice).click();
@@ -41,7 +41,7 @@ describe('Weather shopper purchase', () => {
 
         checkoutPage.evaluateNumberOfItemsInTheCart(2);
 
-        cy.validateUrlContains('/cart')
+        cy.url().should('contain', '/cart')
 
         checkoutPage.getPayWithCardBtn().click();
 
@@ -59,7 +59,7 @@ describe('Weather shopper purchase', () => {
 
         checkoutPage.getStripeSubmitButton().click();
 
-        cy.validateUrlContains('/confirmation');
+        cy.url().should('contain', '/confirmation')
 
         confirmationPage.getPaymentHeader().contains('PAYMENT SUCCESS');
 

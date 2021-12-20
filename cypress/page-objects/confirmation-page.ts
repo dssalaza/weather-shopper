@@ -1,7 +1,7 @@
 export class ConfirmationPage{
 
     getPaymentHeader() {
-        return cy.get('div[class="row justify-content-center"]>h2');
+        return cy.get('div[class="row justify-content-center"]>h2'); 
     }
 
     getPaymentDescription() {

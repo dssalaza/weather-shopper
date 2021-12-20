@@ -16,7 +16,30 @@ Nice to have:
 - The code should be documented and be easy-to-follow.
 - The solution should be well structured.
 
-## Manual end-to-end test case
+## Solution
+
+- Language/Framework: Cypress + TS
+- Solution must be independent of a particular OS: Cypress can run across different OS and in CI pipelines
+- Solution must support running tests in parallel: Currently, Cypress does not have a native method to run tests in parallel for local machine. There is a way to run tests in parallel but documentation recommends to use a CI server and a paid Cypress dashboard service.
+- Solution must support two different browsers: In order to run the test in different browsers you have to install those browsers in your local machine. Cypress automatically recognize those browsers and let you select wich one will use when running the test.
+![](images/browsers.png)
+
+### Setup
+
+Have the nodejs https://nodejs.org/en/ installed for your os.
+
+Once installed go to the project's root folder and type on your terminal:
+
+`npm install`
+
+If you want to run the test using cypress test runner you can type:
+
+`npm run cy:open`
+
+On the other hand, if you want to run the test using the console you can type: `npm run cy:run`
+
+And that’s it! Test should run with those commands.
+
 ### Test case: User is able to buy Moisturizers
 1. User goes to weathershopper website (https://weathershopper.pythonanywhere.com/)
 2. User check current temperature
