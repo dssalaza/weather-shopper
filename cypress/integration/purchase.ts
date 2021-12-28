@@ -10,7 +10,7 @@ describe('Weather shopper purchase', () => {
     const productsPage = new ProductsPage();
     const checkoutPage = new CheckoutPage();
     const confirmationPage = new ConfirmationPage();
-    let creditCard;
+    let creditCard: any;
 
     beforeEach(() => {
         cy.fixture('creditCard.json').then( data => {

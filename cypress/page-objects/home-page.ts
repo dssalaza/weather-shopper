@@ -7,12 +7,11 @@ export class HomePage{
         })
     }
 
-    getBuyProductByName(productName) {      
+    getBuyProductByName(productName: string) {      
         return cy.get('.btn-primary').contains(productName);
     }
 
-    evaluateProductToBuy(temperature) {
-        temperature = Number(temperature);
+    evaluateProductToBuy(temperature: number) {
         if (temperature < 19){
             return 'moisturizers';
         }

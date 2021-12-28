@@ -4,13 +4,11 @@ export class ProductsPage{
         return cy.get('span[id="cart"]');
     }
 
-    priceToNumber(priceTag) {
+    priceToNumber(priceTag: string) {
         return Number(priceTag.match(/\d+/)[0]);
-
     }
 
-    getLowerPriceByIngredient(ingredient) {
-        cy.wait(500);
+    getLowerPriceByIngredient(ingredient: string) {
         return cy
                  .get('.text-center.col-4')
                  .filter(`:contains("${ingredient}")`)
@@ -22,7 +20,7 @@ export class ProductsPage{
                  })
     }
 
-    addProductToCartByPrice(price){
+    addProductToCartByPrice(price: string){
       return cy
                .get('.text-center.col-4')
                .filter(`:contains("${price}")`)
