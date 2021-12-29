@@ -2,10 +2,12 @@
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "rootDir": ".",
-    "outDir": "build"
+    //"outDir": "build", disabling it for now
+    "strict": true,
+    "strictNullChecks": false,
+    "target": "es5",
+    "lib": ["es5", "dom", "ES2015"],
+    "types": ["cypress", "node"]
   },
-  "include": [
-    "src/**/*.ts",
-    "test/**/*.ts"
-  ]
+  "include": ["**/*.ts", "support/index.js", "support/commands/commands.ts"]
 }
