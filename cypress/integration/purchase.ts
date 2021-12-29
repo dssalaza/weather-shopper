@@ -19,7 +19,6 @@ describe('Weather shopper purchase', () => {
 
   it('User can buy a moisturizer', () => {
     cy.visit(Cypress.env('prod_url'));
-
     homePage.getCurrentTemperature().then(temperature => {
       const productName: string = homePage.evaluateProductToBuy(temperature);
       homePage.getBuyProductByName(productName).click();
