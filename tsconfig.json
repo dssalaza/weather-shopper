@@ -2,7 +2,7 @@
   "extends": "./node_modules/gts/tsconfig-google.json",
   "compilerOptions": {
     "rootDir": ".",
-    //"outDir": "build", disabling it for now
+    "outDir": "build",
     "strict": true,
     "strictNullChecks": false,
     "target": "es5",
